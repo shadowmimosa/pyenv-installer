@@ -43,6 +43,12 @@ else
   GITHUB="https://github.com"
 fi
 
+if [ -n "${USE_GIT_URI}" ]; then
+  GITHUB="git://github.com"
+else
+  GITHUB="https://hub.fastgit.org"
+fi
+
 checkout "${GITHUB}/pyenv/pyenv.git"            "${PYENV_ROOT}"
 checkout "${GITHUB}/pyenv/pyenv-doctor.git"     "${PYENV_ROOT}/plugins/pyenv-doctor"
 checkout "${GITHUB}/pyenv/pyenv-installer.git"  "${PYENV_ROOT}/plugins/pyenv-installer"
